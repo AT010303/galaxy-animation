@@ -5,6 +5,9 @@ import * as dat from 'lil-gui'
 import galaxyVertexShader from './shaders/galaxy/vertex.glsl'
 import galaxyFragmentShader from './shaders/galaxy/fragment.glsl'
 
+import { inject } from '@vercel/analytics';
+ 
+inject();
 
 
 /**
