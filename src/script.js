@@ -7,9 +7,16 @@ import galaxyFragmentShader from './shaders/galaxy/fragment.glsl'
 
 import { inject } from '@vercel/analytics';
  
-inject();
+// import some helper that is exposed by your current framework to determine the right mode manually
+import { dev } from '$app/environment';
+ 
+inject({
+  mode: dev ? 'development' : 'production',
+});
 
 
+
+//nothing
 /**
  * Base
  */
@@ -28,13 +35,13 @@ const scene = new THREE.Scene()
 const parameters = {}
 parameters.count = 400000
 parameters.size = 0.005
-parameters.radius = 5
+parameters.radius = 7
 parameters.branches = 10
 parameters.spin = 1
 parameters.randomness = 0.85
 parameters.randomnessPower = 5
 parameters.insideColor = '#ff6030'
-parameters.outsideColor = '#1b3984'
+parameters.outsideColor = '#2d63eb'
 
 let geometry = null
 let material = null
@@ -201,7 +208,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     //Update material
-    material.uniforms.uTime.value = elapsedTime
+    material.uniforms.uTime.value = elapsedTime*2
 
     // Update controls
     controls.update()
