@@ -5,15 +5,7 @@ import * as dat from 'lil-gui'
 import galaxyVertexShader from './shaders/galaxy/vertex.glsl'
 import galaxyFragmentShader from './shaders/galaxy/fragment.glsl'
 
-// import { inject } from '@vercel/analytics';
- 
-// // import some helper that is exposed by your current framework to determine the right mode manually
-// import { dev } from '$app/environment';
- 
-// inject({
-//   mode: dev ? 'development' : 'production',
-// });
-
+//inject command
 
 import { inject } from '@vercel/analytics';
  
